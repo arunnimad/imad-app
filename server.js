@@ -9,7 +9,13 @@ var content = {
     title: 'Article One',
     heading: 'Article One',
     date: 'Aug 16th',
-    content: ''
+    content: `<p>
+                This is paragraph of Article 1
+            </p>
+            
+            <p>
+                This is paragraph of Article 1
+            </p>`
 };
 
 app.get('/', function (req, res) {
