@@ -24,7 +24,7 @@ button.onclick = function () {
 
 
 var submit = document.getElementById('submit.btn');
-var notes = [];
+var names = [];
 submit.onclick = function () {
     
     var request = new XMLHttpRequest();
@@ -33,7 +33,7 @@ submit.onclick = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 var names = request.responseText;
-                notes = JSON.parse(notes);
+                names = JSON.parse(names);
                 
                 var list = '';
                 
