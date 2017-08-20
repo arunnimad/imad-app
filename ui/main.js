@@ -24,6 +24,7 @@ button.onclick = function () {
 
 
 var submit = document.getElementById('submit.btn');
+var notes = [];
 submit.onclick = function () {
     
     var request = new XMLHttpRequest();
