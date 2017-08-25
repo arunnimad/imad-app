@@ -110,7 +110,7 @@ app.post('/create-user', function (req, res) {
             res.send('User successfully created ' + username);
         }
     });
-})
+});
 
 var pool = new Pool(config);
 app.get('/test-db', function (req, res) {
