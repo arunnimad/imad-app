@@ -70,7 +70,7 @@ app.get('/hash/:input', function (req, res) {
 });
 
 app.get('/add-user', function (req, res) {
-    res.send('User successfully created ');
+    
     //JSON
     var username = req.body.username;
     var password = req.body.password;
