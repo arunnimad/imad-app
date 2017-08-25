@@ -69,7 +69,7 @@ app.get('/hash/:input', function (req, res) {
     res.send(hashedString);
 });
 
-app.get('/create-user', function (req, res) {
+app.get('/add-user', function (req, res) {
     res.send('User successfully created ');
     //JSON
     var username = req.body.username;
