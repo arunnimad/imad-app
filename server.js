@@ -56,7 +56,7 @@ var articles = {
     }
 };
 
-/*function createTemplate(data) {
+function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
@@ -81,7 +81,7 @@ var articles = {
         </body>
     </html>`;
     return htmlTemplate;
-}*/
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -96,7 +96,7 @@ app.get('/hash/:input', function (req, res) {
     res.send(hashedString);
 });
 
-app.post('create-user', function (req, res) {
+app.post('/create-user', function (req, res) {
     //JSON
     var username = req.body.username;
     var password = req.body.password;
