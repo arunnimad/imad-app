@@ -86,7 +86,7 @@ app.post('/create-user', function (req, res) {
     });
 });
 
-app.post('', function (req, res) {
+app.post('/login', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
     
@@ -98,7 +98,14 @@ app.post('', function (req, res) {
                 res.send(403).send('username/password is invalid');
             }else {
                 var dbString = result.rows[0].password;
-                res.send('User successfully created ' + username);
+                var salt = dbstring.split('$')[2];
+                var hashedPassword = hash(password, salt);
+                if (hashedPassword === dbString) {
+                    res.send('credentials correct');    
+                }else {
+                    res.send(403).send('username/password is invalid');
+                }
+                
             }
         }
     }); 
