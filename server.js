@@ -127,6 +127,33 @@ app.get('/articles/:articleName', function (req, res) {
     });
 });
 
+function createTemplate(data) {
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
+    
+    var htmlTemplate = `<html>
+        <head>
+            <title>${title}</title>
+        </head>
+        
+        <body>
+            <div><a href="/">Home</a></div>
+            <hr/>
+            
+            <h3>${heading}</h3>
+            
+            <div>${date.toDateString()}</div>
+            
+            <div>
+                ${content}
+            </div>
+        </body>
+    </html>`;
+    return htmlTemplate;
+}
+
 app.get('/:articleName', function (req, res) {
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
