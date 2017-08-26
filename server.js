@@ -144,7 +144,7 @@ function createTemplate(data) {
             
             <h3>${heading}</h3>
             
-            <div>${date}</div>
+            <div>${date.toDateString()}</div>
             
             <div>
                 ${content}
@@ -154,7 +154,7 @@ function createTemplate(data) {
     return htmlTemplate;
 }
 
-app.get('/article/:articleName', function (req, res) {
+app.get('/:articleName', function (req, res) {
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
     //res.send('Article one requested will be served here.');
