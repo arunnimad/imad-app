@@ -86,11 +86,12 @@ app.post('/create-user', function (req, res) {
     });
 });
 
-app.get('/login/:username/:password', function (req, res) {
-    var username = req.params.username;
-    var password = req.params.password;
-    //var username = req.body.username;
-    //var password = req.body.password;
+app.post('/login', function (req, res) {
+//app.get('/login/:username/:password', function (req, res) {
+    //var username = req.params.username;
+    //var password = req.params.password;
+    var username = req.body.username;
+    var password = req.body.password;
     
     pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
         if (err) {
