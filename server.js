@@ -95,10 +95,10 @@ app.get('/login', function (req, res) {
     pool.query('SELECT * FROM "user"', function (err, result) {
         if (err) {
             res.status(500).send(err.toString());
-        }else {res.send(result);
+        }else {
             if (result.rows.length === 0) {
                 res.send(result);
-            }else {res.send('errror3');
+            }else {
                 var dbString = result.rows[0].password;
                 var salt = dbstring.split('$')[2];
                 var hashedPassword = hash(password, salt);
