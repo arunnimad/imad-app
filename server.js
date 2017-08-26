@@ -86,7 +86,7 @@ app.post('/create-user', function (req, res) {
     });
 });
 
-app.get('/login', function (req, res) {
+app.get('/login/:username/:password', function (req, res) {
     var username = req.params.username;
     var password = req.params.password;
     //var username = req.body.username;
