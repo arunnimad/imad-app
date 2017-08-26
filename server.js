@@ -91,7 +91,7 @@ app.get('/login', function (req, res) {
     var password = req.params.password;
     //var username = req.body.username;
     //var password = req.body.password;
-    
+    res.send(username);
     pool.query('SELECT * FROM "user"', function (err, result) {
         if (err) {
             res.status(500).send(err.toString());
