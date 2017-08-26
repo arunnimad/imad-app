@@ -2,7 +2,7 @@ console.log('Loaded!');
 
 var button = document.getElementById('counter');
 
-var counter = 0;
+/*var counter = 0;
 button.onclick = function () {
     var request = new XMLHttpRequest();
     
@@ -20,7 +20,7 @@ button.onclick = function () {
     //Make the request
     request.open('GET', 'http://arun22772742.imad.hasura-app.io/counter', true);
     request.send(null);
-}
+}*/
 
 
 var submit = document.getElementById('submit.btn');
