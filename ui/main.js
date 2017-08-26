@@ -44,7 +44,6 @@ submit.onclick = function () {
     
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    alert (username+' '+password);
     
     //Make the request
     request.open('POST', 'http://arun22772742.imad.hasura-app.io/login', true);
