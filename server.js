@@ -97,7 +97,7 @@ app.get('/login', function (req, res) {
             res.status(500).send(err.toString());
         }else {
             if (result.rows.length === 0) {
-                res.send('username is invalid');
+                res.send(result);
             }else {res.send('errror3');
                 var dbString = result.rows[0].password;
                 var salt = dbstring.split('$')[2];
