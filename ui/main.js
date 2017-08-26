@@ -32,25 +32,22 @@ submit.onclick = function () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                var names = request.responseText;
-                names = JSON.parse(names);
-                
-                var list = '';
-                
-                for (var i = 0; i < names.length; i++) {
-                    list += '<li>'+ names[i] + '</li>';
-                }
-                
-                var ul = document.getElementById('namelist');
-                ul.innerHTML = list;
+                console.log('User logged in');
+                alert(';ogged in successfully');
+            }else if (request.status === 200) {
+                alert ('username/password is incorrect');
+            }else if (request.status === 500) {
+                alert ('something went wrong on the server');
             }
         }
     }
     
-    var nameInput = document.getElementById('name');
-    var name = nameInput.value;
+    var username = document.getElementById('username').value;
+    var password= document.getElementById('password').value;
+    
     
     //Make the request
-    request.open('GET', 'http://arun22772742.imad.hasura-app.io/submit-name?name='+name, true);
-    request.send(null);
+    request.open('POST', 'http://arun22772742.imad.hasura-app.io/login', true);
+    request.setRequestHeader('Content-Type', 'application/json')
+    request.send(JSON.stringify({username:username, password:password}));
 };
