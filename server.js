@@ -100,7 +100,7 @@ app.get('/login/:username/:password', function (req, res) {
                 res.send(result);
             }else {
                 var dbString = result.rows[0].password;
-                var salt = dbString.split('$')[2];
+                var salt = dbString.split('$')[1];
                 var hashedPassword = hash(password, salt);
                 if (hashedPassword === dbString) {
                     res.send('credentials correct');    
